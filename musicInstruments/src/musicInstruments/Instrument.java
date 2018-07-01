@@ -1,14 +1,6 @@
 package musicInstruments;
 
 public abstract class Instrument implements Comparable<Instrument> {
-	@Override
-	public int compareTo(Instrument o) {
-		return this.name.compareTo(o.name);
-	}
-
-	protected enum InstrumentType { 
-		KEYBOARDS, STRING_INSTRUMENT, PERCUSSION, WOODWIND, ELECTRONIC; 
-	}
 	
 	private String name;
 	private double price;
@@ -22,16 +14,14 @@ public abstract class Instrument implements Comparable<Instrument> {
 		this.type = type;
 	}
 	
-	public String getName() {
-		return name;
+	@Override
+	public int compareTo(Instrument o) {
+		return this.name.compareTo(o.name);
 	}
 	
-	public int getQuantity() {
-		return quantity;
-	}
-	
-	public double getPrice() {
-		return price;
+	@Override
+	public String toString() {
+		return "Instrument [name = " + name + ", price = " + price + ", quantity = " + quantity + "]";
 	}
 	
 	public void increaseQuantity(int quantity){
@@ -41,10 +31,19 @@ public abstract class Instrument implements Comparable<Instrument> {
 	public void decreaseQuantity(int quantity){
 		this.quantity -= quantity;
 	}
-
-	@Override
-	public String toString() {
-		return "Instrument [name = " + name + ", price = " + price + ", quantity = " + quantity + "]";
+	
+	public String getName() {
+		return name;
 	}
+	
+	public double getPrice() {
+		return price;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	
 
 }
