@@ -44,6 +44,4 @@ public abstract class Instrument implements Comparable<Instrument> {
 		return quantity;
 	}
 	
-	
-
 }
