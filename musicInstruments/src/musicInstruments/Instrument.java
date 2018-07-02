@@ -23,11 +23,19 @@ public abstract class Instrument implements Comparable<Instrument> {
 	public String toString() {
 		return "Instrument [name = " + name + ", price = " + price + ", quantity = " + quantity + "]";
 	}
-	
+
+/**
+ * Method which increases the quantity of instruments
+ * @param quantity
+ */
 	public void increaseQuantity(int quantity){
 		this.quantity += quantity;
 	} 
-	
+
+/**
+ * Method which decreases the quantity of instruments
+ * @param quantity
+ */
 	public void decreaseQuantity(int quantity){
 		this.quantity -= quantity;
 	}
